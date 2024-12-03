@@ -1,9 +1,12 @@
+--day1.hs
+--Preston Engler
+
 module Day1 (day1, day1p2) where
 
 import Data.List
 
-day1 :: [String] -> Int
-day1 s = sumDiff (tupleSort $ parse s)
+day1 :: [String] -> String
+day1 s = show $ sumDiff (tupleSort $ parse s)
 
 tupleSort (xs, ys) = (sort xs, sort ys)
 
@@ -21,8 +24,8 @@ parse s = parse' s ([], [])
     y = read $ w !! 1 in 
     parse' (tail s) (x:xs, y:ys)
 
-day1p2 :: [String] -> Int
-day1p2 s = simScore (tupleSort $ parse s) 0
+day1p2 :: [String] -> String
+day1p2 s = show $ simScore (tupleSort $ parse s) 0
   where
   simScore :: ([Int], [Int]) -> Int -> Int
   simScore ([], ys) score = score
