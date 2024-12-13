@@ -11,8 +11,11 @@ import Day5
 import Day6
 import Day7
 import Day8
+import Day9
 
 data Test = RunTest | NoTest
+
+main = run 9
 
 run :: Int -> IO ()
 run i = run' i NoTest
@@ -38,6 +41,7 @@ run' i test = do
       6 -> (day6, day6p2)
       7 -> (day7, day7p2)
       8 -> (day8, day8p2)
+      9 -> (day9, day9p2)
 
 
 getInput :: Int -> String -> IO String
